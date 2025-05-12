@@ -21,7 +21,14 @@ return {
         require("none-ls-shellcheck.code_actions"),
         ----------------                              ----------------
 
-          -------------------        TS | JS       ------------------------
+        -------------------        JAVA       ------------------------
+        null_ls.builtins.formatting.google_java_format,
+        null_ls.builtins.diagnostics.checkstyle.with({
+          extra_args = { "-c", "/google_checks.xml" },
+        }),
+        ----------------                              ----------------
+
+        -------------------        TS | JS       ------------------------
         -- formatting: PRETTIER FORMATTER
         require("none-ls.diagnostics.eslint_d"), -- TS | JS
         require("none-ls.code_actions.eslint_d"),

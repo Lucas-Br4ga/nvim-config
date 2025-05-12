@@ -1,4 +1,5 @@
 return {
+
 	{
 		"mason-org/mason.nvim",
 
@@ -56,9 +57,11 @@ return {
 				filetypes = { "sh", "bash" },
 			})
 
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Mostrar documentação" })
+      vim.keymap.set("n", "<leader>d", vim.lsp.buf.declaration, { desc = "Ir para declaração" })
+      vim.keymap.set("n", "<leader>i", vim.lsp.buf.implementation, { desc = "Ir para implementação" })
+      vim.keymap.set("n", "<leader>b", "g;", { desc = "Voltar para última mudança" })
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Ações de código (LSP)"})
 		end,
 	},
 }
